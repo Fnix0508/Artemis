@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration scan="true">
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder charset="UTF-8">
+            <pattern>%d{HH:mm:ss.SSS} %highlight(%-5level) %cyan(%32.32logger) %X{user} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+    <logger name="com.darcytech" level="INFO"/>
+    <logger name="org.springframework.boot.context.embedded.tomcat" level="INFO"/>
+    <logger name="org.hibernate.SQL" level="DEBUG"/>
+    <logger name="org.springframework.jdbc.core.JdbcTemplate" level="DEBUG"/>
+
+</configuration>
