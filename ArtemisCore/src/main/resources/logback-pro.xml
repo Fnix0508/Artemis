@@ -5,8 +5,8 @@
 
     <appender name="FILE" class="ch.qos.logback.core.FileAppender">
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>logs/${APP}-%d{yyyy-MM-dd}.log.gz</fileNamePattern>
-            <maxHistory>15</maxHistory>
+            <FileNamePattern>logs/${APP}-%d{yyyy-MM-dd}.log.gz</FileNamePattern>
+            <MaxHistory>15</MaxHistory>
         </rollingPolicy>
 　　　　　<encoder>
 　　　　　　　 <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
