@@ -3,18 +3,28 @@
 <configuration scan="true">
     <property name="APP" value="ArtemisUpdater" />
 
-    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    <appender name="outToFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- 正在记录的日志文件的路径及文件名 -->
+        <file>logs/current.log</file>
+        <!--日志文件输出格式-->
+        <encoder>
+            <pattern>${APP}-%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+            <charset>UTF-8</charset> <!-- 此处设置字符集 -->
+        </encoder>
+        <!-- 日志记录器的滚动策略，按日期，按大小记录 -->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>logs/${APP}-%d{yyyy-MM-dd}.log.gz</FileNamePattern>
-            <MaxHistory>15</MaxHistory>
+            <fileNamePattern>logs/%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <!--日志文件保留天数-->
+            <maxHistory>15</maxHistory>
         </rollingPolicy>
-　　　　　<encoder>
-　　　　　　　 <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
-　　　　　</encoder>
     </appender>
 
+
     <root level="INFO">
-        <appender-ref ref="FILE"/>
+        <appender-ref ref="outToFile"/>
     </root>
 
     <logger name="org.springframework.boot.context.embedded.tomcat" level="INFO"/>
