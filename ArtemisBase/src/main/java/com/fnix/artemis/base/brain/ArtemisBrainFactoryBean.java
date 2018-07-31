@@ -43,7 +43,6 @@ public class ArtemisBrainFactoryBean {
     private CoreProperties coreProperties;
 
     public ArtemisBrain create() {
-        init();
         List<ArtemisLayer> artemisLayers =
                 artemisLayerDao.findByNetworkCode(coreProperties.getNetworkCode(), new Sort(Sort.Direction.ASC, "seq"));
         List<Integer> neuronsInLayers = Stream2.map(artemisLayers, ArtemisLayer::getNum);
