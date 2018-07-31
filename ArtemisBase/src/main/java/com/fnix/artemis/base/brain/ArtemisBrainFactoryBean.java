@@ -101,7 +101,7 @@ public class ArtemisBrainFactoryBean {
         System.out.print(neuralNetwork);
     }
 
-    private void init() {
+    /*private void init() {
         List<ArtemisLayer> layers = artemisLayerDao.findByNetworkCode(coreProperties.getNetworkCode(), new Sort(Sort.Direction.ASC, "seq"));
         if (layers.isEmpty()) {
             //build layers
@@ -142,6 +142,6 @@ public class ArtemisBrainFactoryBean {
             }
             neuronWeightDao.saveAll(weights);
         }
-    }
+    }*/
 
 }
