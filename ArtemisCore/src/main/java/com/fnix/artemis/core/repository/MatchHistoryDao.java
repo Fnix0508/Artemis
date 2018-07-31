@@ -19,6 +19,10 @@ public interface MatchHistoryDao extends JpaRepository<MatchHistory, Long> {
     List<MatchHistory> incrementGet(long lastId, Pageable pageable);
 
     default MatchHistory incrementGetOne(long lastId) {
-        return incrementGet(lastId, PageRequest.of(1, 1)).get(0);
+        List<MatchHistory> list = incrementGet(lastId, PageRequest.of(0, 1));
+        if (list.isEmpty()) {
+            return null;
+        }
+        return list.get(0);
     }
 }

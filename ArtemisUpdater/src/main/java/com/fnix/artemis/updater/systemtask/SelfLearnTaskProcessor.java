@@ -70,6 +70,9 @@ public class SelfLearnTaskProcessor implements SystemTaskProcessor {
     public void process(SystemTask systemTask) {
         SystemProgress progress = systemProgressService.getOrDefault(ProgressType.SELF_LEARN, LEARN_START);
         MatchHistory matchHistory = matchHistoryDao.incrementGetOne(progress.getLastId());
+        if (matchHistory == null) {
+            return;
+        }
         learnFromHistory(matchHistory);
         progress.setLastTime(matchHistory.getLastModified());
         progress.setLastId(matchHistory.getId());
