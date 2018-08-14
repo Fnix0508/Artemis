@@ -1,0 +1,17 @@
+.emptyBox {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty {
+  width: 18px;
+  height: 18px;
+}
+
+.active {
+  border-radius: 9px;
+  border: 1px solid #CCCCCC;
+}

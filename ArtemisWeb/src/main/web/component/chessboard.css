@@ -1,0 +1,10 @@
+.chessboard {
+  background: url('resource/pic/chessboard.png');
+  background-size: 300px 300px;
+  width: 300px;
+  height: 300px;
+}
+
+.chessmenRow {
+  display: flex;
+}

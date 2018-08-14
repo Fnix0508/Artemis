@@ -1,0 +1,21 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.inputMargin {
+  margin-left: 10px;
+}
+
+.register {
+  cursor: pointer;
+  color: #CCCCCC;
+  margin-left: 10px;
+}

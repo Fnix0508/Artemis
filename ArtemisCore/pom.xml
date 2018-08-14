@@ -43,6 +43,11 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.beykery</groupId>
+            <artifactId>neuroph</artifactId>
+            <version>${neuroph.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>org.apache.tomcat</groupId>
