@@ -50,7 +50,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <executable>true</executable>
-                    <mainClass>com.fnix.artemis.updater.UpdaterMain</mainClass>
+                    <mainClass>com.fnix.artemis.web.WebMain</mainClass>
                 </configuration>
             </plugin>
         </plugins>
